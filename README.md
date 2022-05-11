@@ -20,3 +20,14 @@ max virtual memory areas vm.max_map_count [65530] is too low, increase to at lea
 ```
 docker-compose -f "zk_kafka\docker-compose.yml" up -d --build
 ```
+
+## kafka-elk-docker-compose
+
+从https://github.com/sermilrod/kafka-elk-docker-compose
+修改的
+
+启动命令
+
+```
+docker-compose -f "kafka-elk-docker-compose\docker-compose.yml" up -d --build
+```
