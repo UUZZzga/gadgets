@@ -1,4 +1,4 @@
-FROM java:8-buster
+FROM openjdk:8-buster
 
 ADD http://dl.mycat.org.cn/2.0/1.21-release/mycat2-1.21-release-jar-with-dependencies.jar /usr/local
 ADD http://dl.mycat.org.cn/2.0/install-template/mycat2-install-template-1.21.zip /usr/local
