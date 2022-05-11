@@ -1,0 +1,19 @@
+{
+	"customTables":{},
+	"globalTables":{},
+	"normalProcedures":{},
+	"normalTables":{
+		"test":{
+			"createTableSQL":"CREATE TABLE `logistics`.`test` (\n\t`testId` int NOT NULL AUTO_INCREMENT,\n\t`aaa` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,\n\tPRIMARY KEY (`testId`)\n) ENGINE = InnoDB CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci",
+			"locality":{
+				"schemaName":"logistics",
+				"tableName":"test",
+				"targetName":"dr1"
+			}
+		}
+	},
+	"schemaName":"logistics",
+	"shardingTables":{},
+	"targetName":"dr1",
+	"views":{}
+}

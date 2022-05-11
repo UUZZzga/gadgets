@@ -1,3 +1,4 @@
 sonarqube/sonarqube
 kafka-elk-docker-compose/esdata
 kafka-elk-docker-compose/apache-logs
+mycat/mycat/logs
