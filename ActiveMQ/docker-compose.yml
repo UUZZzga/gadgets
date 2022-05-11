@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  activemq:
+    image: symptoma/activemq:5.16.4
+    volumes:
+      # 准许访问 Web 控制台，详情请参考：
+      # https://issues.apache.org/jira/browse/AMQ-8018
+      - "./conf/jetty.xml:/opt/activemq/conf/jetty.xml"
+    restart: always
+    ports:
+      - "61616:61616"
+      - "8161:8161"
+    networks:
+      - activemq
+
+networks:
+  activemq:
+    driver: bridge
