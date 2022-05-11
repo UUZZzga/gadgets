@@ -1,0 +1,31 @@
+version: '3'
+services:
+  zookeeper:
+    image: wurstmeister/zookeeper
+    restart: always
+    ports:
+      - 2181:2181
+    networks:
+      - kafka-network
+
+  kafka1:
+    image: wurstmeister/kafka
+    restart: always
+    depends_on:
+      - zookeeper
+    ports:
+      - 9093:9093
+    environment:
+      KAFKA_ADVERTISED_HOST_NAME: kafka1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181/kafka
+      KAFKA_LISTENERS: PLAINTEXT://:9093
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka1:9093
+      KAFKA_BROKER_ID: 1
+    volumes:
+      - ./docker.sock:/var/run/docker.sock
+    networks:
+      - kafka-network
+
+networks:
+  kafka-network:
+    driver: bridge
